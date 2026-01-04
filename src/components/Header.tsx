@@ -52,10 +52,11 @@ const Header = () => {
             className="flex items-center gap-2 group"
           >
             <div className="relative">
-              <Waves className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
+              <Waves className="h-8 w-8 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <span className="text-xl md:text-2xl font-bold">
-              <span className="wave-gradient-text">HB WAVE</span>
+              <span className="wave-gradient-text group-hover:animate-gradient-shift">HB WAVE</span>
               <span className="text-foreground"> Tech</span>
             </span>
           </a>

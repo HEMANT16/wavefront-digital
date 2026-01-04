@@ -46,33 +46,33 @@ const Contact = () => {
               <div className="space-y-4">
                 <a
                   href="mailto:contact@hbwavetech.com"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 group hover-lift"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">General Inquiries</p>
-                    <p className="text-foreground font-medium">contact@hbwavetech.com</p>
+                    <p className="text-foreground font-medium group-hover:text-primary transition-colors">contact@hbwavetech.com</p>
                   </div>
                 </a>
 
                 <a
                   href="mailto:careers@hbwavetech.com"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 group hover-lift"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                     <Users className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Careers</p>
-                    <p className="text-foreground font-medium">careers@hbwavetech.com</p>
+                    <p className="text-foreground font-medium group-hover:text-primary transition-colors">careers@hbwavetech.com</p>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50">
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 group">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-primary" />
+                    <MapPin className="h-5 w-5 text-primary animate-wave" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
@@ -98,11 +98,11 @@ const Contact = () => {
               <div className="space-y-4">
                 <Button
                   size="lg"
-                  className="w-full bg-white text-primary hover:bg-white/90 transition-colors font-semibold"
+                  className="w-full bg-white text-primary hover:bg-white/90 transition-all font-semibold hover:scale-105 group"
                   asChild
                 >
                   <a href="mailto:contact@hbwavetech.com">
-                    <Mail className="mr-2 h-5 w-5" />
+                    <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                     Send us an Email
                   </a>
                 </Button>
