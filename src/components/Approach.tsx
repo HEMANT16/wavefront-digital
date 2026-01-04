@@ -51,16 +51,16 @@ const Approach = () => {
           {approaches.map((approach, index) => (
             <div
               key={approach.title}
-              className={`flex items-start gap-4 p-6 rounded-xl bg-card/50 border border-border/30 hover:border-primary/20 transition-all duration-300 ${
+              className={`group flex items-start gap-4 p-6 rounded-xl bg-card/50 border border-border/30 hover:border-primary/20 transition-all duration-300 hover:bg-card/80 hover-lift ${
                 isInView ? "animate-fade-in-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <approach.icon className="h-6 w-6 text-primary" />
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors group-hover:scale-110 duration-300">
+                <approach.icon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-1">
+                <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
                   {approach.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

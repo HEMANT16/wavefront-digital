@@ -63,20 +63,22 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group p-6 lg:p-8 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 ${
+              className={`group p-6 lg:p-8 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 hover-lift ${
                 isInView ? "animate-fade-in-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl wave-gradient text-primary-foreground mb-6 group-hover:scale-110 transition-transform">
-                <service.icon className="h-7 w-7" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl wave-gradient text-primary-foreground mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <service.icon className="h-7 w-7 group-hover:scale-110 transition-transform" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
                 {service.description}
               </p>
+              {/* Animated underline */}
+              <div className="mt-4 h-0.5 w-0 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-500" />
             </div>
           ))}
         </div>

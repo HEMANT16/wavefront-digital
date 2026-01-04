@@ -77,13 +77,15 @@ const Careers = () => {
             {enjoyList.map((item, index) => (
               <div
                 key={item}
-                className="flex items-center gap-3 p-3 rounded-lg bg-card/50 border border-border/30"
-                style={{ animationDelay: `${index * 50}ms` }}
+                className={`flex items-center gap-3 p-3 rounded-lg bg-card/50 border border-border/30 hover:border-primary/20 hover:bg-card/80 transition-all duration-300 group ${
+                  isInView ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 80}ms` }}
               >
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
                   <Check className="h-3.5 w-3.5 text-primary" />
                 </div>
-                <span className="text-foreground text-sm">{item}</span>
+                <span className="text-foreground text-sm group-hover:text-primary transition-colors">{item}</span>
               </div>
             ))}
           </div>
@@ -94,17 +96,17 @@ const Careers = () => {
           {jobs.map((job, index) => (
             <div
               key={job.title}
-              className={`p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 ${
+              className={`group p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 hover-lift ${
                 isInView ? "animate-fade-in-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${(index + 3) * 100}ms` }}
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl wave-gradient text-primary-foreground flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl wave-gradient text-primary-foreground flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   <Briefcase className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                     {job.title}
                   </h3>
                   <p className="text-sm text-primary">{job.subtitle}</p>
@@ -112,12 +114,14 @@ const Careers = () => {
               </div>
               <ul className="space-y-2">
                 {job.requirements.map((req) => (
-                  <li key={req} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={req} className="flex items-start gap-2 text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors">
                     <span className="text-primary mt-1">•</span>
                     {req}
                   </li>
                 ))}
               </ul>
+              {/* Animated underline */}
+              <div className="mt-4 h-0.5 w-0 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-500" />
             </div>
           ))}
         </div>
@@ -130,11 +134,11 @@ const Careers = () => {
         >
           <Button
             size="lg"
-            className="wave-gradient text-primary-foreground hover:opacity-90 transition-opacity"
+            className="wave-gradient text-primary-foreground hover:opacity-90 transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
             asChild
           >
-            <a href="mailto:careers@hbwavetech.com">
-              <Mail className="mr-2 h-5 w-5" />
+            <a href="mailto:careers@hbwavetech.com" className="group">
+              <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Apply: careers@hbwavetech.com
             </a>
           </Button>

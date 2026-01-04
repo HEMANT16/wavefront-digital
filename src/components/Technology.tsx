@@ -69,21 +69,24 @@ const Technology = () => {
           {capabilities.map((cap, index) => (
             <div
               key={cap.title}
-              className={`group relative p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 overflow-hidden ${
+              className={`group relative p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 overflow-hidden hover-lift ${
                 isInView ? "animate-fade-in-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Background gradient on hover */}
-              <div className="absolute inset-0 wave-gradient opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+              {/* Animated background gradient on hover */}
+              <div className="absolute inset-0 wave-gradient opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+              
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-shimmer" />
               
               <div className="relative">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl wave-gradient text-primary-foreground flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <cap.icon className="h-6 w-6" />
+                  <div className="w-12 h-12 rounded-xl wave-gradient text-primary-foreground flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                    <cap.icon className="h-6 w-6 group-hover:scale-110 transition-transform" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {cap.title}
                     </h3>
                     <p className="text-sm text-primary font-medium">
@@ -91,7 +94,7 @@ const Technology = () => {
                     </p>
                   </div>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors">
                   {cap.details}
                 </p>
               </div>
